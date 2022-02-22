@@ -54,26 +54,4 @@ Vagrant.configure("2") do |config|
       go run src/minitwit.go
     SHELL
   end
-
-  #########################################################################
-  #                                                                       #
-  #                           POSTGRES BOX                                #
-  #                                                                       #
-  #########################################################################
-  #config.vm.define "postgresdb" do |server|
-  #  config.vm.provider "virtualbox" do |provider|
-  #    provider.gui = false
-  #    provider.memory = "2048"
-  #  end
-
-    # provision for postgresql 
-    # TODO: sudo apt -y install postgresql-12 and setup connection
-  #  config.vm.provision "shell", inline: <<-SHELL
-  #  SHELL
-  #end
-
-  # update
-  config.vm.provision "shell", inline: <<-SHELL
-    sudo apt-get update
-  SHELL
 end
