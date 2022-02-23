@@ -3,12 +3,12 @@
 
 Vagrant.configure("2") do |config|
 
-  config.vm.define "minitwit" do |config|
-
+  config.vm.define "ApplicationServer" do |config|
+    
     ## Digital Ocean Specific
     config.vm.provider :digital_ocean do |provider, override|
 
-      override.ssh.private_key_path = 'C:/Users/JTT/.ssh/id_rsa'
+      override.ssh.private_key_path = ENV["SSH_KEY_NAME"]
       override.vm.box = 'digital_ocean'
       override.vm.box_url = "https://github.com/devopsgroup-io/vagrant-digitalocean/raw/master/box/digital_ocean.box"
       override.nfs.functional = false
@@ -21,16 +21,7 @@ Vagrant.configure("2") do |config|
       provider.private_networking = true
       provider.ipv6 = false
       provider.monitoring = false
+
     end
-
-    # Set name of host
-    config.vm.hostname = "minitwit"
-
-    # Copy the files from here to the server
-    config.vm.synced_folder ".", "/vagrant", type: "rsync"
-
-    ## TODO: add configuration scripts here.
-
   end
-
 end
