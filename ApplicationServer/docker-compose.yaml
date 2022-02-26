@@ -15,17 +15,14 @@ services:
     networks:
       - app-network
     depends_on:
-      - minitwit
+      - minitwit1
 
   minitwit1:
     container_name: minitwit1
-    image: brndnmtthws/nginx-echo-headers
+    image: groupddevops/minitwit-go:latest
     networks:
       - app-network
-  minitwit2:
-    container_name: minitwit2
-    image: brndnmtthws/nginx-echo-headers
-    networks:
-      - app-network
+
+
 networks:
   app-network:
