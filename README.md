@@ -4,19 +4,31 @@ Configuration files that describes how the servers are deployed.
 
 This guide have been used to setup the config file [https://github.com/devopsgroup-io/vagrant-digitalocean](https://github.com/devopsgroup-io/vagrant-digitalocean)
 
-## Prerequisites
+## Servers
+
+The idea of the server deployment is that we would most likely have the following structure:
+
+- Application server(s)
+- Database server?
+- Monitoring/Logging server
+
+The idea is that with this clear separation will the searching of logs not effect the service that we are providing on the application servers. and we could maybe scale the different "service" differently.
+
+i.e. the application servers needs a server with a strong CPU to serve our clients quickly. and mayne our database server needs a lot of RAM. and we could choose different servers for the different use cases.
+
+## General deployment setup
+
+This section describes how to deploy the servers.
+
+### Prerequisites
+
+information needed:
 
 - Access to the account at Digital Ocean
 - Have the Digital Ocean Token
 - Have an ssh key that can be used to configure the server
 
-## Notes on the setup
-
-Right now there is only one user on the server and that is root.
-
-root have sudo privileges. root are currently also  
-
-## Setup
+Tools needed:
 
 - Install [VirtualBox](https://www.virtualbox.org/)
 - Install [Vagrant](https://www.vagrantup.com/)
@@ -40,11 +52,16 @@ export SSH_KEY_NAME=C:/Users/JTT/.ssh/id_rsa
 ```
 
 Test the the info is set with the following command:
+
 ```shell
 echo $DIGITAL_OCEAN_TOKEN && echo $SSH_KEY_NAME
 ```
 
-## Deployment
+## Application server
+
+The servers that host our applications that users are using.
+
+### Deployment
 
 This section will explain the process of spinning up the server(s) at digital ocean. It is a requirement to also have access to the administation panel at DigitalOcean.
 
@@ -91,3 +108,34 @@ Setup complete.
 ```
 
 The server is now configured setup with docker and docker-compose.
+
+The init script have installed the following
+
+- TLS certificates have been signed by [Lets Encrypt](https://letsencrypt.org/) with [cert bot](https://certbot.eff.org/)
+- docker
+- docker-compose
+
+The application server is now setup to run the following docker applications
+
+- Nginx
+  - accepts connections on 80 and 443.
+  - Port 80 will redirect to 443.
+  - Port 443 will do an TLS termination and redirect to either minitwit1 or minitwit2
+
+- "minitwit1"
+  - A simple docker application that responds with the headers that was sent to the application
+
+- "minitwit2"
+  - Same as "minitwit1", just a test of using nginx as a load balancer
+
+All access to through the Nginx is logged in the folder `/var/log/nginx/`.
+
+### Security considerations
+
+We need to make sure that the firewall is configured correctly. i.e. allow only access to ports 22, 80, 443.
+
+And all connections to the ssh, must be through public private key. and not allow password access.
+
+Right now there is only one user on the server and that is root.
+
+root have sudo privileges. root are currently also running the docker containers.

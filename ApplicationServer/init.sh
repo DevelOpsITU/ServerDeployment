@@ -7,7 +7,6 @@ sudo apt upgrade -y
 # https://stackoverflow.com/questions/49172841/how-to-install-certbot-lets-encrypt-without-interaction
 
 server_name=thomsen-it.dk
-
 sudo apt install nginx -y
 sudo snap install core; sudo snap refresh core
 sudo snap install --classic certbot
@@ -39,7 +38,7 @@ sudo apt install haveged -y # https://stackoverflow.com/questions/59941911/docke
 
 docker --version
 docker-compose --version
-
 docker-compose up -d
-
 docker ps
+docker-compose logs
+
