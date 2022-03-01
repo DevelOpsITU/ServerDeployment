@@ -20,6 +20,9 @@ services:
   minitwit1:
     container_name: minitwit1
     image: groupddevops/minitwit-go:latest
+    environment:
+      - SERVER_HOST=thomsen-it.dk
+      - DB_CONNECTION_STRING=/tmp/minitwit.db
     networks:
       - app-network
 
