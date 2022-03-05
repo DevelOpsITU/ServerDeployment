@@ -130,7 +130,7 @@ The database server should host the database that we are using to persist the fo
 
 Below is a deployment diagrams of what containers lives on the server
 
-![Deployment diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/DevelOpsITU/ServerDeployment/tree/%239-Setup-Postgre-server/Diagrams/DatabaseServer/deployment.iuml)
+![Deployment diagram](./Diagrams/DatabaseServer/deployment.svg)
 
 The Database server takes much inspiration from the Application server section.
 
