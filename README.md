@@ -58,6 +58,10 @@ echo $DIGITAL_OCEAN_TOKEN && echo $SSH_KEY_NAME && echo $DATABASE_PASSWORD
 
 The servers that host our applications that users are using.
 
+Below is a image of what is deployed to the server 
+
+![Deployment diagram](./Diagrams/ApplicationServer/deployment.svg)
+
 ### Deployment
 
 This section will explain the process of spinning up the server(s) at digital ocean. It is a requirement to also have access to the administration panel at DigitalOcean.
@@ -123,6 +127,7 @@ The application server is now setup to run the following docker applications
   - A simple docker application that responds with the headers that was sent to the application
 
 All access to the applications go through the Nginx and is logged in the folder `/var/log/nginx/`.
+
 
 ## Database server
 
