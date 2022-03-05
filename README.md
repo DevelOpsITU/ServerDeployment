@@ -130,7 +130,7 @@ The database server should host the database that we are using to persist the fo
 
 Below is a deployment diagrams of what containers lives on the server
 
-```plantuml
+
 @startuml
 actor alice as a
 frame "Database server" {
@@ -156,7 +156,7 @@ Postgres -- db
 
 }
 @enduml
-```
+
 
 The Database server takes much inspiration from the Application server section.
 
