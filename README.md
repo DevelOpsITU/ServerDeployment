@@ -144,6 +144,7 @@ To start the server:
 - `vagrant up DatabaseServer`
 - Assign the ip to the new droplet
 - `./DatabaseServerInit.sh`
+- `./DatabaseServerSetPassword.sh`
 
 To update the configurations of the server use
 
