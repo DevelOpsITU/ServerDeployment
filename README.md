@@ -130,33 +130,7 @@ The database server should host the database that we are using to persist the fo
 
 Below is a deployment diagrams of what containers lives on the server
 
-
-@startuml
-actor alice as a
-frame "Database server" {
-
-  node  Docker #aliceblue;line:blue;line.dotted;text:blue
-
-      database ./data/postgres/data as db {
-      storage MiniTwit
-    }
-
-  frame "Docker db-network" as dockernet  {
-    node Nginx
-    node Postgres
-
-}
-
-
-
-a -> Docker : ":5432"
-Docker-> Nginx : ":5432"
-Nginx -> Postgres : ":5432"
-Postgres -- db
-
-}
-@enduml
-
+![Deployment diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/DevelOpsITU/ServerDeployment/tree/%239-Setup-Postgre-server/Diagrams/DatabaseServer/deployment.iuml)
 
 The Database server takes much inspiration from the Application server section.
 

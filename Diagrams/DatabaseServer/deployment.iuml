@@ -1,0 +1,25 @@
+@startuml deployment
+actor alice as a
+frame "Database server" {
+
+  node  Docker #aliceblue;line:blue;line.dotted;text:blue
+
+      database ./data/postgres/data as db {
+      storage MiniTwit
+    }
+
+  frame "Docker db-network" as dockernet  {
+    node Nginx
+    node Postgres
+
+}
+
+
+
+a -> Docker : ":5432"
+Docker-> Nginx : ":5432"
+Nginx -> Postgres : ":5432"
+Postgres -- db
+
+}
+@enduml
