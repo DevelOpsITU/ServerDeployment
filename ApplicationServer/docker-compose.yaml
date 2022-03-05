@@ -3,6 +3,7 @@ services:
   nginx:
     container_name: nginx
     image: nginx:1.15-alpine
+    restart: always
     ports:
       - "80:80"
       - "443:443"
@@ -20,9 +21,12 @@ services:
   minitwit1:
     container_name: minitwit1
     image: groupddevops/minitwit-go:latest
+    restart: always
     environment:
       - SERVER_HOST=thomsen-it.dk
       - DB_CONNECTION_STRING=/tmp/minitwit.db
+    volumes:
+      - ./data/minitwit/:/tmp/
     networks:
       - app-network
 
