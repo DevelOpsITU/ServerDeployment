@@ -9,7 +9,7 @@ This guide have been used to setup the config file [https://github.com/devopsgro
 The idea of the server deployment is that we would most likely have the following structure:
 
 - Application server(s)
-- Database server?
+- Database server
 - Monitoring/Logging server
 
 The idea is that with this clear separation will the searching of logs not effect the service that we are providing on the application servers. and we could maybe scale the different "service" differently.
@@ -42,41 +42,42 @@ To deploy the server on Digital ocean there are a few settings that needs to be 
 
 - DIGITAL_OCEAN_TOKEN: Key retrieved from Digital ocean.
 - SSH_KEY_NAME
+- DATABASE_PASSWORD
 
 ```shell
 export DIGITAL_OCEAN_TOKEN=SuperSecretSharedSecretWithDigitalOcean
 ```
 
-```shell
-export SSH_KEY_NAME=C:/Users/JTT/.ssh/id_rsa
-```
-
 Test the the info is set with the following command:
 
 ```shell
-echo $DIGITAL_OCEAN_TOKEN && echo $SSH_KEY_NAME
+echo $DIGITAL_OCEAN_TOKEN && echo $SSH_KEY_NAME && echo $DATABASE_PASSWORD
 ```
 
 ## Application server
 
 The servers that host our applications that users are using.
 
+Below is a image of what is deployed to the server 
+
+![Deployment diagram](./Diagrams/ApplicationServer/deployment.svg)
+
 ### Deployment
 
-This section will explain the process of spinning up the server(s) at digital ocean. It is a requirement to also have access to the administation panel at DigitalOcean.
+This section will explain the process of spinning up the server(s) at digital ocean. It is a requirement to also have access to the administration panel at DigitalOcean.
 
 The following code snippets will include both in- and output. Inputs is defined by starting with `$`
 
 ```shell
-$ vagrant up
-Bringing machine 'minitwit' up with 'digital_ocean' provider...
-==> minitwit: Using existing SSH key: Vagrant
-==> minitwit: Creating a new droplet...
-==> minitwit: Assigned IP address: 139.59.208.47
-==> minitwit: Private IP address: 10.114.0.2
+$ vagrant up ApplicationServer
+Bringing machine 'ApplicationServer' up with 'digital_ocean' provider...
+==> ApplicationServer: Using existing SSH key: Vagrant
+==> ApplicationServer: Creating a new droplet...
+==> ApplicationServer: Assigned IP address: 139.59.208.47
+==> ApplicationServer: Private IP address: 10.114.0.2
 ```
 
-Go to the [Digital Ocean admin page for floating IP's](https://cloud.digitalocean.com/networking/floating_ips) and assign 138.68.125.107 to the newly created minitwit server.
+Go to the [Digital Ocean admin page for floating IP's](https://cloud.digitalocean.com/networking/floating_ips) and assign 138.68.125.107 to the newly created ApplicationServer.
 
 ---
 
@@ -85,7 +86,7 @@ Go to the [Digital Ocean admin page for floating IP's](https://cloud.digitalocea
 ---
 
 ```shell
-$ ./run.sh
+$ ./ApplicationServerInit.sh
 Warning: Permanently added 'thomsen-it.dk,138.68.125.107' (ECDSA) to the list of known hosts.
 init.sh                                                                                                                                                       100%  843    34.8KB/s   00:00    
 Warning: Permanently added 'thomsen-it.dk,138.68.125.107' (ECDSA) to the list of known hosts.
@@ -120,22 +121,39 @@ The application server is now setup to run the following docker applications
 - Nginx
   - accepts connections on 80 and 443.
   - Port 80 will redirect to 443.
-  - Port 443 will do an TLS termination and redirect to either minitwit1 or minitwit2
+  - Port 443 will do an TLS termination and redirect to minitwit
 
-- "minitwit1"
+- "minitwit"
   - A simple docker application that responds with the headers that was sent to the application
 
-- "minitwit2"
-  - Same as "minitwit1", just a test of using nginx as a load balancer
+All access to the applications go through the Nginx and is logged in the folder `/var/log/nginx/`.
 
-All access to through the Nginx is logged in the folder `/var/log/nginx/`.
 
-### Security considerations
+## Database server
 
-We need to make sure that the firewall is configured correctly. i.e. allow only access to ports 22, 80, 443.
+The database server should host the database that we are using to persist the for the application.
 
-And all connections to the ssh, must be through public private key. and not allow password access.
+Below is a deployment diagrams of what containers lives on the server
 
-Right now there is only one user on the server and that is root.
+![Deployment diagram](./Diagrams/DatabaseServer/deployment.svg)
 
-root have sudo privileges. root are currently also running the docker containers.
+The Database server takes much inspiration from the Application server section.
+
+To start the server:
+
+- `vagrant up DatabaseServer`
+- Assign the ip to the new droplet
+- `./DatabaseServerInit.sh`
+- `./DatabaseServerSetPassword.sh`
+
+To update the configurations of the server use
+
+- `./DatabaseServerUpdate.sh`
+
+## Security considerations
+
+- We need to make sure that the firewall is configured correctly. i.e. allow only access to ports 22, 80, 443.
+- And all connections to the ssh, must be through public private key. and not allow password access.
+- Right now there is only one user on the server and that is root.
+- root have sudo privileges. root are currently also running the docker containers.
+- root have direct access to the database container and are currently allowed to change the password of the database.

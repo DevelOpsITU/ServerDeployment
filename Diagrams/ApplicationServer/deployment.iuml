@@ -1,0 +1,35 @@
+@startuml deployment
+actor alice as a
+frame "Application server" {
+
+  node  Docker #aliceblue;line:blue;line.dotted;text:blue
+  frame "Docker app-network" {
+    node Nginx
+    node MiniTwit
+  }
+
+  folder "/etc/letsencrypt/live/thomsen-it.dk" as certs {
+    file "cert.pem"
+    file "chain.pem"
+    file "fullchain.pem"
+    file "privkey.pem"
+  }
+
+  folder "/var/logs/" as logs {
+    folder "Nginx" as NginxLog {
+      file "access.log"
+      file "thomsen-it.access.log"
+    }
+    folder "Minitwit" as miniTwitLogs {
+      file "minitwit.log" 
+    }
+  }
+
+a -> Docker : ":443"
+Docker-> Nginx : ":443"
+Nginx -> MiniTwit: ":80"
+Nginx -- certs
+Nginx -- NginxLog
+MiniTwit -- miniTwitLogs
+}
+@enduml

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="635px" preserveAspectRatio="none" style="width:908px;height:635px;" version="1.1" viewBox="0 0 908 635" width="908px" zoomAndPan="magnify"><defs><filter height="300%" id="fftd9kx55fdtk" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[f05610748f6640c769b75bf0fa25631d]
+cluster Application server--><rect fill="#FFFFFF" filter="url(#fftd9kx55fdtk)" height="607.5" style="stroke: #000000; stroke-width: 1.5;" width="849" x="45.5" y="16.5"/><path d="M199.5,17.5 L199.5,25.7969 L189.5,35.7969 L45.5,35.7969 " fill="none" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="144" x="48.5" y="30.4951">Application server</text><!--MD5=[c57fe63ccc784df5cb2ee51a1a3f4b5c]
+cluster Docker app-network--><rect fill="#FFFFFF" filter="url(#fftd9kx55fdtk)" height="81" style="stroke: #000000; stroke-width: 1.5;" width="246" x="542.5" y="43.5"/><path d="M714.5,44.5 L714.5,52.7969 L704.5,62.7969 L542.5,62.7969 " fill="none" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="162" x="545.5" y="57.4951">Docker app-network</text><!--MD5=[c887db6dacfa107a8e600158f5b38741]
+cluster certs--><polygon fill="#FFFFFF" filter="url(#fftd9kx55fdtk)" points="53.5,262,330.5,262,337.5,284.2969,340.5,284.2969,340.5,616,53.5,616,53.5,262" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="53.5" x2="337.5" y1="284.2969" y2="284.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="271" x="57.5" y="276.9951">/etc/letsencrypt/live/thomsen-it.dk</text><!--MD5=[1497e3ba29964c870bef0c5efaf493a3]
+cluster logs--><polygon fill="#FFFFFF" filter="url(#fftd9kx55fdtk)" points="348.5,235,427.5,235,434.5,257.2969,886.5,257.2969,886.5,341,348.5,341,348.5,235" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="348.5" x2="434.5" y1="257.2969" y2="257.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="73" x="352.5" y="249.9951">/var/logs/</text><!--MD5=[839105dc3e351dfb5dc65ae1cd6ab753]
+cluster NginxLog--><polygon fill="#FFFFFF" filter="url(#fftd9kx55fdtk)" points="356.5,262,406.5,262,413.5,284.2969,710.5,284.2969,710.5,333,356.5,333,356.5,262" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="356.5" x2="413.5" y1="284.2969" y2="284.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="44" x="360.5" y="276.9951">Nginx</text><!--MD5=[483d440daaa06dea74e2bed4c52b9f36]
+cluster miniTwitLogs--><polygon fill="#FFFFFF" filter="url(#fftd9kx55fdtk)" points="730.5,262,797.5,262,804.5,284.2969,878.5,284.2969,878.5,333,730.5,333,730.5,262" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="730.5" x2="804.5" y1="284.2969" y2="284.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="61" x="734.5" y="276.9951">Minitwit</text><!--MD5=[fb1239b090e799ef2ed2bb62c488a4ee]
+entity Docker--><polygon fill="#F0F8FF" filter="url(#fftd9kx55fdtk)" points="297.5,80.5,307.5,70.5,387.5,70.5,387.5,106.7969,377.5,116.7969,297.5,116.7969,297.5,80.5" style="stroke: #0000FF; stroke-width: 1.0; stroke-dasharray: 1.0,3.0;"/><line style="stroke: #0000FF; stroke-width: 1.0; stroke-dasharray: 1.0,3.0;" x1="377.5" x2="386.5" y1="80.5" y2="71.5"/><line style="stroke: #0000FF; stroke-width: 1.0; stroke-dasharray: 1.0,3.0;" x1="297.5" x2="377.5" y1="80.5" y2="80.5"/><line style="stroke: #0000FF; stroke-width: 1.0; stroke-dasharray: 1.0,3.0;" x1="377.5" x2="377.5" y1="80.5" y2="116.7969"/><text fill="#0000FF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="312.5" y="103.4951">Docker</text><!--MD5=[b7709df717efd9e6df0e9843c5de81db]
+entity Nginx--><polygon fill="#FEFECE" filter="url(#fftd9kx55fdtk)" points="550.5,80.5,560.5,70.5,628.5,70.5,628.5,106.7969,618.5,116.7969,550.5,116.7969,550.5,80.5" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="618.5" x2="627.5" y1="80.5" y2="71.5"/><line style="stroke: #000000; stroke-width: 1.5;" x1="550.5" x2="618.5" y1="80.5" y2="80.5"/><line style="stroke: #000000; stroke-width: 1.5;" x1="618.5" x2="618.5" y1="80.5" y2="116.7969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="38" x="565.5" y="103.4951">Nginx</text><!--MD5=[7738ae4e309240ee5bb913c966e16783]
+entity MiniTwit--><polygon fill="#FEFECE" filter="url(#fftd9kx55fdtk)" points="685,80.5,695,70.5,780,70.5,780,106.7969,770,116.7969,685,116.7969,685,80.5" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="770" x2="779" y1="80.5" y2="71.5"/><line style="stroke: #000000; stroke-width: 1.5;" x1="685" x2="770" y1="80.5" y2="80.5"/><line style="stroke: #000000; stroke-width: 1.5;" x1="770" x2="770" y1="80.5" y2="116.7969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="55" x="700" y="103.4951">MiniTwit</text><!--MD5=[e9b947ccbaa30b6bfd3e788cec22959f]
+entity cert.pem--><polygon fill="#FEFECE" filter="url(#fftd9kx55fdtk)" points="114.5,289,114.5,325.2969,196.5,325.2969,196.5,299,186.5,289,114.5,289" style="stroke: #000000; stroke-width: 1.5;"/><path d="M186.5,289 L186.5,299 L196.5,299 " fill="#FEFECE" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="62" x="124.5" y="311.9951">cert.pem</text><!--MD5=[70cc14fce1ad979eebc7b49048fde24e]
+entity chain.pem--><polygon fill="#FEFECE" filter="url(#fftd9kx55fdtk)" points="231.5,289,231.5,325.2969,323.5,325.2969,323.5,299,313.5,289,231.5,289" style="stroke: #000000; stroke-width: 1.5;"/><path d="M313.5,289 L313.5,299 L323.5,299 " fill="#FEFECE" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="72" x="241.5" y="311.9951">chain.pem</text><!--MD5=[5c39bb3c6213e3bc7566008ec639ae9f]
+entity fullchain.pem--><polygon fill="#FEFECE" filter="url(#fftd9kx55fdtk)" points="83,572,83,608.2969,194,608.2969,194,582,184,572,83,572" style="stroke: #000000; stroke-width: 1.5;"/><path d="M184,572 L184,582 L194,582 " fill="#FEFECE" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="91" x="93" y="594.9951">fullchain.pem</text><!--MD5=[49dc80c744c789e3e748bbe9031df764]
+entity privkey.pem--><polygon fill="#FEFECE" filter="url(#fftd9kx55fdtk)" points="229,572,229,608.2969,332,608.2969,332,582,322,572,229,572" style="stroke: #000000; stroke-width: 1.5;"/><path d="M322,572 L322,582 L332,582 " fill="#FEFECE" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="239" y="594.9951">privkey.pem</text><!--MD5=[a6ecaf599cf76ba7272e7cdbbe8c132b]
+entity access.log--><polygon fill="#FEFECE" filter="url(#fftd9kx55fdtk)" points="573.5,289,573.5,325.2969,667.5,325.2969,667.5,299,657.5,289,573.5,289" style="stroke: #000000; stroke-width: 1.5;"/><path d="M657.5,289 L657.5,299 L667.5,299 " fill="#FEFECE" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="74" x="583.5" y="311.9951">access.log</text><!--MD5=[eb396bf5576273887912cc2798ebfa93]
+entity thomsen-it.access.log--><polygon fill="#FEFECE" filter="url(#fftd9kx55fdtk)" points="365,289,365,325.2969,538,325.2969,538,299,528,289,365,289" style="stroke: #000000; stroke-width: 1.5;"/><path d="M528,289 L528,299 L538,299 " fill="#FEFECE" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="153" x="375" y="311.9951">thomsen-it.access.log</text><!--MD5=[8f867f1490f3207f1535a570a0dca9b3]
+entity minitwit.log--><polygon fill="#FEFECE" filter="url(#fftd9kx55fdtk)" points="738,289,738,325.2969,835,325.2969,835,299,825,289,738,289" style="stroke: #000000; stroke-width: 1.5;"/><path d="M825,289 L825,299 L835,299 " fill="#FEFECE" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="77" x="748" y="311.9951">minitwit.log</text><!--MD5=[f83ae91a690dfc657e1c5fbbd818f13d]
+entity a--><ellipse cx="21.5" cy="62.5" fill="#FEFECE" filter="url(#fftd9kx55fdtk)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;"/><path d="M21.5,70.5 L21.5,97.5 M8.5,78.5 L34.5,78.5 M21.5,97.5 L8.5,112.5 M21.5,97.5 L34.5,112.5 " fill="none" filter="url(#fftd9kx55fdtk)" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="31" x="6" y="130.9951">alice</text><!--MD5=[f22868d95b2ddc1b3d5fa39279155bfe]
+link a to Docker--><path d="M37.4184,93.5 C83.4375,93.5 218.0675,93.5 292.1644,93.5 " fill="none" id="a-&gt;Docker" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="297.3927,93.5,288.3927,89.5,292.3927,93.5,288.3927,97.5,297.3927,93.5" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="28" x="153.25" y="86.5669">:443</text><!--MD5=[63c91d84c81b1a4a2a11c7d312d6534b]
+link Docker to Nginx--><path d="M387.5164,93.5 C432.4008,93.5 500.9009,93.5 545.4445,93.5 " fill="none" id="Docker-&gt;Nginx" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="550.4851,93.5,541.4851,89.5,545.4851,93.5,541.4851,97.5,550.4851,93.5" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="28" x="455" y="86.5669">:443</text><!--MD5=[8578e2f289a9671db1a18744231793a0]
+link Nginx to MiniTwit--><path d="M628.5754,93.5 C644.3132,93.5 662.71,93.5 679.6147,93.5 " fill="none" id="Nginx-&gt;MiniTwit" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="684.8085,93.5,675.8085,89.5,679.8085,93.5,675.8085,97.5,684.8085,93.5" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="20" x="646.75" y="86.5669">:80</text><!--MD5=[8790aaa3fae4911918898930f1906cf6]
+link Nginx to certs--><path d="M569.427,116.6176 C562.7287,123.0978 554.8319,129.5734 546.5,134 C365.8686,229.9674 243.838,92.0922 97.5,235 C91.9691,240.4013 88.042,247.2258 85.2708,254.5097 C84.5779,256.3307 83.9574,258.1804 83.4021,260.0437 C83.2632,260.5096 83.1285,260.9762 82.9977,261.4435 C82.965,261.5604 82.9326,261.6772 82.9004,261.7941 " fill="none" id="Nginx-certs" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[79981517fe40faf27184b199be3966d0]
+link Nginx to NginxLog--><path d="M609.4028,116.9412 C631.1966,143.7811 665.6768,189.884 685.5,235 C688.6,242.0552 691.1806,249.7584 693.3152,257.4182 C693.582,258.3757 693.8418,259.3325 694.0949,260.2873 C694.2214,260.7647 694.3462,277.8207 694.4693,278.2969 " fill="none" id="Nginx-NginxLog" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[ca84c626e7c93baef87b9ebeb0c95586]
+link MiniTwit to miniTwitLogs--><path d="M758.0099,116.5037 C785.3971,142.6023 828.2329,187.7164 852.5,235 C856.0299,241.8779 858.8939,249.4869 861.2103,257.1064 C861.4999,258.0588 861.7809,259.0114 862.0535,259.9628 C862.1899,260.4385 862.3241,260.9139 862.4563,261.3887 C862.4894,261.5075 862.5223,278.1782 862.5551,278.2969 " fill="none" id="MiniTwit-miniTwitLogs" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[9a29890e3092dcbc236853a04025f221]
+link cert.pem to chain.pem--><!--MD5=[9506ed45e39e97877bbf11726f0c953d]
+link cert.pem to fullchain.pem--><!--MD5=[18c95a4aa247a5dbe1a2496c93f0505d]
+link fullchain.pem to privkey.pem--><!--MD5=[2054996ba81505c1e57a7cacf5dd67b5]
+@startuml deployment
+actor alice as a
+frame "Application server" {
+
+  node  Docker #aliceblue;line:blue;line.dotted;text:blue
+  frame "Docker app-network" {
+    node Nginx
+    node MiniTwit
+  }
+
+  folder "/etc/letsencrypt/live/thomsen-it.dk" as certs {
+    file "cert.pem"
+    file "chain.pem"
+    file "fullchain.pem"
+    file "privkey.pem"
+  }
+
+  folder "/var/logs/" as logs {
+    folder "Nginx" as NginxLog {
+      file "access.log"
+      file "thomsen-it.access.log"
+    }
+    folder "Minitwit" as miniTwitLogs {
+      file "minitwit.log" 
+    }
+  }
+
+a -> Docker : ":443"
+Docker-> Nginx : ":443"
+Nginx -> MiniTwit: ":80"
+Nginx - - certs
+Nginx - - NginxLog
+MiniTwit - - miniTwitLogs
+}
+@enduml
+
+PlantUML version 1.2020.06(Sun Apr 05 12:38:32 GMT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 14-ea+33
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
