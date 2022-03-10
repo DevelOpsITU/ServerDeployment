@@ -1,0 +1,60 @@
+#!/bin/bash
+sudo apt update
+sudo apt upgrade -y
+
+# install certbot
+# https://certbot.eff.org/
+# https://eff-certbot.readthedocs.io/en/stable/
+# https://stackoverflow.com/questions/49172841/how-to-install-certbot-lets-encrypt-without-interaction
+
+#sudo apt install nginx -y
+#sudo snap install core; sudo snap refresh core
+#sudo snap install --classic certbot
+#sudo ln -s /snap/bin/certbot /usr/bin/certbot
+#server_name=database.thomsen-it.dk
+#sudo certbot --nginx --non-interactive --agree-tos -d $server_name -d www.$server_name --email webmaster@$server_name
+#server_name=prometheus.thomsen-it.dk
+#sudo certbot --nginx --non-interactive --agree-tos -d $server_name -d www.$server_name --email webmaster@$server_name
+#server_name=grafana.thomsen-it.dk
+#sudo certbot --nginx --non-interactive --agree-tos -d $server_name -d www.$server_name --email webmaster@$server_name
+#
+#sudo systemctl status nginx
+#sudo service nginx stop
+#nginx -s stop
+#sudo systemctl status nginx
+
+
+# https://stackoverflow.com/questions/45542830/nginx-tls-termination-for-postgresql
+# https://stackoverflow.com/questions/35545648/tcp-proxy-to-postgres-database-as-an-upstream-server-in-nginx
+# https://www.postgresql.org/docs/9.1/ssl-tcp.html
+# https://stackoverflow.com/questions/50389883/generate-crt-key-ssl-files-from-lets-encrypt-from-scratch
+# https://unix.stackexchange.com/questions/94714/cp-l-vs-cp-h
+
+#cp -L /etc/letsencrypt/live/database.thomsen-it.dk/fullchain.pem ./data/postgres/certs/server.crt
+#cp -L /etc/letsencrypt/live/database.thomsen-it.dk/privkey.pem ./data/postgres/certs/server.key
+
+
+# Install docker 
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+sudo apt install docker-ce -y
+
+
+# Install docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+# After instalation of docker-compose and running it, it just hung. 
+sudo apt install haveged -y # https://stackoverflow.com/questions/59941911/docker-compose-up-hangs-forever-how-to-debug
+
+
+docker --version
+docker-compose --version
+docker-compose up -d
+docker ps
+docker-compose logs
+
+
+
