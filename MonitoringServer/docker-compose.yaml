@@ -17,43 +17,58 @@ services:
       - monitoring-network
     depends_on:
       - grafana
+      - prometheus
 
   grafana:
     image: grafana/grafana:8.4.3
+    container_name: grafana
+    user: "0"
     restart: always
+    ports:
+     - 3000:3000
     volumes:
       - ./data/grafana/internal:/var/lib/grafana
-      - ./data/grafana/config:/var/lib/grafana
-
+      - ./data/grafana/config/provisioning/:/etc/grafana/provisioning/
     networks:
       - monitoring-network
 
   prometheus:
     image: prom/prometheus:v2.33.5
+    container_name: prometheus
+    user: "0"
+    restart: always
     volumes:
-      - ./prometheus/config/:/etc/prometheus/
+      - ./data/prometheus/config/:/etc/prometheus/
       - ./data/prometheus/interal:/prometheus
     command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--config.file=/etc/prometheus/prometheus.yaml'
       - '--storage.tsdb.path=/prometheus'
       - '--web.console.libraries=/usr/share/prometheus/console_libraries'
       - '--web.console.templates=/usr/share/prometheus/consoles'
     ports:
       - 9090:9090
-    links:
-      - cadvisor:cadvisor
-      - alertmanager:alertmanager
-#      - pushgateway:pushgateway
-    depends_on:
-      - cadvisor
-#      - pushgateway
+
     networks:
-      - back-tier
+      - monitoring-network
+  node_exporter:
+    image: prom/node-exporter:v1.3.1
+    container_name: node_exporter
     restart: always
-#    deploy:
-#      placement:
-#        constraints:
-#          - node.hostname == ${HOSTNAME}
+    pid: host
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command: 
+      - '--path.procfs=/host/proc' 
+      - '--path.sysfs=/host/sys'
+      - --collector.filesystem.ignored-mount-points
+      - "^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)"
+    ports:
+      - 9100:9100
+    networks:
+      - monitoring-network
+    
 
 networks:
   monitoring-network:
