@@ -20,13 +20,14 @@ services:
 
   minitwit1:
     container_name: minitwit1
-    image: groupddevops/minitwit-go:latest
+    image: groupddevops/minitwit-go:00047a5
     restart: always
     environment:
       - SERVER_HOST=thomsen-it.dk
-      - DB_CONNECTION_STRING=/tmp/minitwit.db
-    volumes:
-      - ./data/minitwit/:/tmp/
+      - DB_TYPE=Postgres
+      - DB_CONNECTION_STRING=${CONNECTION_STRING}
+#    volumes:
+#      - ./data/minitwit/:/tmp/
     networks:
       - app-network
 

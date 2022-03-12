@@ -1,0 +1,1 @@
+CONNECTION_STRING=host=database.thomsen-it.dk port=5432 user=postgres password=example dbname=minitwit
