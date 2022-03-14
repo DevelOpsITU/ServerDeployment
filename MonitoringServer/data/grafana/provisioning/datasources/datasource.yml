@@ -6,7 +6,7 @@ apiVersion: 1
 datasources:
   # <string, required> name of the datasource. Required
   - name: Prometheus
-    uid: 12345678
+    uid: Prometheus12345678
     # <string, required> datasource type. Required
     type: prometheus
     # <string, required> access mode. direct or proxy. Required
@@ -44,3 +44,14 @@ datasources:
     version: 1
     # <bool> allow users to edit datasources from the UI.
     editable: true
+
+  - name: postgres
+    uid: POSTGRES1234567890
+    type: postgres
+    url: $DATABASE_HOSTNAME:5432
+    database: minitwit
+    user: postgres
+    secureJsonData:
+      password: $DATABASE_PASSWORD
+    jsonData:
+      sslmode: "disable"

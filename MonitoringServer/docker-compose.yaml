@@ -25,12 +25,15 @@ services:
     container_name: grafana
     user: "0"
     restart: always
+    environment:
+      - DATABASE_HOSTNAME=$DATABASE_HOSTNAME
+      - DATABASE_PASSWORD=$DATABASE_PASSWORD
     ports:
      - 3000:3000
     volumes:
-      - ./data/grafana/internal:/var/lib/grafana
-      - ./data/grafana/config/provisioning/:/etc/grafana/provisioning/
-      - ./data/grafana/config/dashboards/:/etc/grafana/dashboards/
+      - ./data/grafana/internal/:/var/lib/grafana/
+      - ./data/grafana/provisioning/:/etc/grafana/provisioning/
+      - ./data/grafana/dashboards/:/etc/grafana/dashboards/
     networks:
       - monitoring-network
 
