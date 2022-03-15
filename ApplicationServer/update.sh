@@ -3,4 +3,4 @@ docker-compose pull
 docker-compose down
 docker-compose up -d
 docker ps
-docker-compose logs
+docker-compose logs --tail 100
