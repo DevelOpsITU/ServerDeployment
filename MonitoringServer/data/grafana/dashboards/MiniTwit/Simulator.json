@@ -906,7 +906,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "10s",
+  "refresh": "30s",
   "schemaVersion": 35,
   "style": "dark",
   "tags": [],
@@ -914,13 +914,13 @@
     "list": []
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Simulator",
   "uid": "hygmBoPnk",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }
