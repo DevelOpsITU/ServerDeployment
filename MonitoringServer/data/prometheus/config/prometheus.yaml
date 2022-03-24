@@ -31,3 +31,10 @@ scrape_configs:
       - targets: ['thomsen-it.dk']
         labels:
           group: 'production'
+
+  - job_name: 'scraper'
+    scrape_interval: 120s
+    static_configs:
+      - targets: ['data-scraper:8080']
+        labels:
+          group: 'production'

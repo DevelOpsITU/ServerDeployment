@@ -87,6 +87,14 @@ services:
       - 9100:9100
     networks:
       - monitoring-network
+
+  data-scraper:
+    image: groupddevops/data-scraper:f16c0db
+    container_name: data-scraper
+    environment:
+      - INTERVAL=5
+    networks:
+      - monitoring-network
     
 
 networks:
