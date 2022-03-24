@@ -19,6 +19,7 @@ services:
     depends_on:
       - grafana
       - prometheus
+      - loki
 
   grafana:
     image: grafana/grafana:8.4.3
@@ -55,6 +56,19 @@ services:
 
     networks:
       - monitoring-network
+
+  loki:
+    image: grafana/loki:2.4.2
+    container_name: loki
+    user: "0"
+    volumes:
+      - ./docker-data/loki/config/:/etc/loki/
+      - ./docker-data/loki/internal/:/tmp/loki/
+    command: -config.file=/etc/loki/loki.yaml
+    networks:
+      - monitoring-network
+    
+  
   node_exporter:
     image: prom/node-exporter:v1.3.1
     container_name: node_exporter
