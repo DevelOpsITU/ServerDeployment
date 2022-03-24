@@ -24,11 +24,10 @@ scrape_configs:
           group: 'production'
 
 
-# Wait till it is actually setup.
-#  - job_name: 'minitwit-go-app'
-#    scrape_interval: 5s
-#
-#    static_configs:
-#      - targets: ['minitwit-go:8080']
-#        labels:
-#          group: 'production'
+  - job_name: 'minitwit'
+    scrape_interval: 15s
+    scheme: https
+    static_configs:
+      - targets: ['thomsen-it.dk']
+        labels:
+          group: 'production'
