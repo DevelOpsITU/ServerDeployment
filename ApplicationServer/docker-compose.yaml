@@ -17,10 +17,15 @@ services:
       - app-network
     depends_on:
       - minitwit
+      - fluentbit
+    logging:
+      driver: fluentd
+      options:
+        tag: docker.{{.Name}}
 
   minitwit:
     container_name: minitwit
-    image: groupddevops/minitwit-go:a46e0b3
+    image: groupddevops/minitwit-go:393f2bd
     restart: always
     environment:
       - SERVER_HOST=thomsen-it.dk
@@ -28,6 +33,22 @@ services:
       - DB_CONNECTION_STRING=${CONNECTION_STRING}
     networks:
       - app-network
+    depends_on:
+      - fluentbit
+    logging:
+      driver: fluentd
+      options:
+        tag: docker.{{.Name}}
+
+  fluentbit:
+    image: fluent/fluent-bit:1.9.0
+    container_name: fluentbit
+    restart: always
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+    volumes:
+      - ./data/fluentbit/config/:/fluent-bit/etc/
 
   node_exporter:
     image: prom/node-exporter:v1.3.1
