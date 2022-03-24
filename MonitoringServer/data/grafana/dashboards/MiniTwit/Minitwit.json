@@ -524,7 +524,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "select count(*), u.username\nfrom follower f\n    join \"user\" u on u.user_id = f.whom_id\ngroup by who_id, u.username\norder by count(*) desc\nlimit 10",
+          "rawSql": "select count(*), u.username\nfrom follower f\n         join \"user\" u on u.user_id = f.whom_id\ngroup by whom_id, u.username\norder by count(*) desc\nlimit 10",
           "refId": "A",
           "select": [
             [
@@ -758,6 +758,6 @@
   "timezone": "browser",
   "title": "Minitwit - Business Intelligence",
   "uid": "nwWEUkP7k",
-  "version": 4,
+  "version": 7,
   "weekStart": ""
 }
