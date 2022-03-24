@@ -8,6 +8,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "3100:3100"
     volumes:
       - /var/log/nginx:/var/log/nginx
       - ./data/nginx/nginx.conf:/etc/nginx/nginx.conf
@@ -60,10 +61,11 @@ services:
   loki:
     image: grafana/loki:2.4.2
     container_name: loki
+    restart: always
     user: "0"
     volumes:
-      - ./docker-data/loki/config/:/etc/loki/
-      - ./docker-data/loki/internal/:/tmp/loki/
+      - ./data/loki/config/:/etc/loki/
+      - ./data/loki/internal/:/tmp/loki/
     command: -config.file=/etc/loki/loki.yaml
     networks:
       - monitoring-network
@@ -91,6 +93,7 @@ services:
   data-scraper:
     image: groupddevops/data-scraper:f16c0db
     container_name: data-scraper
+    restart: always
     environment:
       - INTERVAL=5
     networks:
