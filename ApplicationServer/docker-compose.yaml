@@ -16,11 +16,11 @@ services:
     networks:
       - app-network
     depends_on:
-      - minitwit1
+      - minitwit
 
-  minitwit1:
-    container_name: minitwit1
-    image: groupddevops/minitwit-go:00047a5
+  minitwit:
+    container_name: minitwit
+    image: groupddevops/minitwit-go:a46e0b3
     restart: always
     environment:
       - SERVER_HOST=thomsen-it.dk
