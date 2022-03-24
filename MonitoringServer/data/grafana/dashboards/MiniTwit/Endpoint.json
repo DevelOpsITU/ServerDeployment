@@ -25,260 +25,44 @@
   "liveNow": false,
   "panels": [
     {
-      "datasource": {
-        "type": "postgres",
-        "uid": "POSTGRES1234567890"
-      },
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "thresholds"
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMax": 0.04,
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
           },
           "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 0,
-        "y": 0
-      },
-      "id": 3,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.4.3",
-      "targets": [
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "POSTGRES1234567890"
-          },
-          "format": "table",
-          "group": [],
-          "hide": false,
-          "metricColumn": "none",
-          "rawQuery": true,
-          "rawSql": "SELECT COUNT(*)\nFROM \"user\"",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "\"user\"",
-          "timeColumn": "time",
-          "where": []
-        }
-      ],
-      "title": "Registered Users",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "postgres",
-        "uid": "POSTGRES1234567890"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 6,
-        "y": 0
-      },
-      "id": 5,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.4.3",
-      "targets": [
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "POSTGRES1234567890"
-          },
-          "format": "table",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": true,
-          "rawSql": "SELECT COUNT(*)\nFROM \"message\"\n",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "timeColumn": "time",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            }
-          ]
-        }
-      ],
-      "title": "Messages",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "postgres",
-        "uid": "POSTGRES1234567890"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 12,
-        "y": 0
-      },
-      "id": 11,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.4.3",
-      "targets": [
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "POSTGRES1234567890"
-          },
-          "format": "table",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": true,
-          "rawSql": "SELECT COUNT(*)\nFROM \"follower\"\n",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "timeColumn": "time",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            }
-          ]
-        }
-      ],
-      "title": "Follow",
-      "type": "stat"
-    },
-    {
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "text": "N/A"
-                }
-              },
-              "type": "special"
-            }
-          ],
-          "max": 100,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -286,30 +70,402 @@
               {
                 "color": "green",
                 "value": null
+              },
+              {
+                "color": "red",
+                "value": 0.03
               }
             ]
           },
-          "unit": "none"
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 17,
+        "x": 0,
+        "y": 0
+      },
+      "id": 17,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus12345678"
+          },
+          "exemplar": false,
+          "expr": "minitwit_endpoint_responsetime/10^9",
+          "interval": "",
+          "legendFormat": "{{url}} {{method}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Endpoint response times (in seconds)",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 16,
+        "w": 7,
+        "x": 17,
+        "y": 0
+      },
+      "id": 18,
+      "options": {
+        "displayMode": "basic",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": false,
+        "text": {
+          "titleSize": 18,
+          "valueSize": 16
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus12345678"
+          },
+          "exemplar": true,
+          "expr": "sum by (url, code) (minitwit_total_http)",
+          "interval": "",
+          "legendFormat": "{{url}} {{code}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Errorcodes + url",
+      "type": "bargauge"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMax": 0.04,
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0.03
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 17,
+        "x": 0,
+        "y": 8
+      },
+      "id": 15,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus12345678"
+          },
+          "exemplar": true,
+          "expr": "(minitwit_endpoint_avg_responsetime_sum/minitwit_endpoint_avg_responsetime_count)/10^9",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "{{url}} {{method}} ({{code}})",
+          "refId": "A"
+        }
+      ],
+      "title": "Average respond times per endpoint (in seconds)",
+      "type": "timeseries"
+    },
+    {
+      "description": "Distribution of response times",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMax": 0.04,
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0.03
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": [
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "50 Quantile"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 0,
+        "y": 16
+      },
+      "id": 26,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus12345678"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.95, sum(rate(minitwit_endpoint_responsetime_histogram_bucket[5m])) by(le))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "95 Quantile",
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus12345678"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.9, sum(rate(minitwit_endpoint_responsetime_histogram_bucket[5m])) by(le))",
+          "interval": "",
+          "legendFormat": "90 Quantile",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus12345678"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.5, sum(rate(minitwit_endpoint_responsetime_histogram_bucket[5m])) by(le))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "50 Quantile",
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus12345678"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.10, sum(rate(minitwit_endpoint_responsetime_histogram_bucket[5m])) by(le))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "10 Quantile",
+          "refId": "D"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus12345678"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.05, sum(rate(minitwit_endpoint_responsetime_histogram_bucket[5m])) by(le))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "5 Quantile",
+          "refId": "E"
+        }
+      ],
+      "title": "Response time",
+      "type": "timeseries"
+    },
+    {
+      "description": "Amount of status codes returned that is not 2xx or 3xx",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 6,
-        "w": 6,
-        "x": 18,
-        "y": 0
+        "w": 3,
+        "x": 9,
+        "y": 16
       },
-      "id": 1,
-      "links": [],
-      "maxDataPoints": 100,
+      "id": 13,
       "options": {
         "colorMode": "value",
         "graphMode": "area",
         "justifyMode": "auto",
-        "orientation": "horizontal",
+        "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "mean"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
@@ -324,43 +480,20 @@
             "uid": "Prometheus12345678"
           },
           "exemplar": false,
-          "expr": "minitwit_latest{job=\"minitwit\"}",
-          "hide": false,
-          "instant": true,
+          "expr": "sum (minitwit_total_http{code!~\"2.*|3.*\"})",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
         }
       ],
-      "title": "Latest",
+      "title": "Total errors",
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "postgres",
-        "uid": "POSTGRES1234567890"
-      },
-      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "axisSoftMin": 0,
-            "fillOpacity": 80,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineWidth": 1,
-            "scaleDistribution": {
-              "type": "linear"
-            }
+            "mode": "thresholds"
           },
           "mappings": [],
           "thresholds": {
@@ -369,105 +502,54 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
-          },
-          "unit": "short"
+          }
         },
         "overrides": []
       },
       "gridPos": {
         "h": 6,
-        "w": 12,
-        "x": 0,
-        "y": 6
+        "w": 5,
+        "x": 12,
+        "y": 16
       },
       "id": 7,
       "options": {
-        "barRadius": 0,
-        "barWidth": 0.97,
-        "groupWidth": 0.7,
-        "legend": {
-          "calcs": [],
-          "displayMode": "hidden",
-          "placement": "right"
+        "displayMode": "gradient",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
         },
-        "orientation": "horizontal",
-        "showValue": "never",
-        "stacking": "none",
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        },
-        "xTickLabelRotation": 0,
-        "xTickLabelSpacing": 0
+        "showUnfilled": true
       },
       "pluginVersion": "8.4.3",
       "targets": [
         {
           "datasource": {
-            "type": "postgres",
-            "uid": "POSTGRES1234567890"
+            "type": "prometheus",
+            "uid": "Prometheus12345678"
           },
-          "format": "table",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": true,
-          "rawSql": "select count(*), u.username\nfrom follower f\n    join \"user\" u on u.user_id = f.who_id\ngroup by who_id, u.username\norder by count(*) desc\nlimit 10",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "timeColumn": "time",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            }
-          ]
+          "exemplar": true,
+          "expr": "sum by (code) (minitwit_total_http)",
+          "interval": "",
+          "legendFormat": "{{code}}",
+          "refId": "A"
         }
       ],
-      "title": "Top 10 Following users (Who is following the most ppl)",
-      "type": "barchart"
+      "title": "HTTP Requests (Per code)",
+      "type": "bargauge"
     },
     {
-      "datasource": {
-        "type": "postgres",
-        "uid": "POSTGRES1234567890"
-      },
       "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "axisSoftMin": 0,
-            "fillOpacity": 80,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineWidth": 1,
-            "scaleDistribution": {
-              "type": "linear"
-            }
+            "mode": "thresholds"
           },
           "mappings": [],
           "thresholds": {
@@ -476,195 +558,336 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
-          },
-          "unit": "short"
+          }
         },
         "overrides": []
       },
       "gridPos": {
         "h": 6,
-        "w": 12,
-        "x": 12,
-        "y": 6
+        "w": 7,
+        "x": 17,
+        "y": 16
       },
-      "id": 10,
+      "id": 3,
       "options": {
-        "barRadius": 0,
-        "barWidth": 0.97,
-        "groupWidth": 0.7,
-        "legend": {
-          "calcs": [],
-          "displayMode": "hidden",
-          "placement": "right"
+        "displayMode": "gradient",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
         },
-        "orientation": "horizontal",
-        "showValue": "never",
-        "stacking": "none",
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        },
-        "xTickLabelRotation": 0,
-        "xTickLabelSpacing": 0
+        "showUnfilled": true,
+        "text": {
+          "titleSize": 20
+        }
       },
       "pluginVersion": "8.4.3",
       "targets": [
         {
           "datasource": {
-            "type": "postgres",
-            "uid": "POSTGRES1234567890"
+            "type": "prometheus",
+            "uid": "Prometheus12345678"
           },
-          "format": "table",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": true,
-          "rawSql": "select count(*), u.username\nfrom follower f\n    join \"user\" u on u.user_id = f.whom_id\ngroup by who_id, u.username\norder by count(*) desc\nlimit 10",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "timeColumn": "time",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            }
-          ]
+          "exemplar": true,
+          "expr": "sum by (method) (minitwit_total_http)",
+          "interval": "",
+          "legendFormat": "{{method}}",
+          "refId": "A"
         }
       ],
-      "title": "Top 10 Followed users (Who is followed by most ppl)",
-      "type": "barchart"
+      "title": "Total HTTP Requests",
+      "type": "bargauge"
     },
     {
-      "datasource": {
-        "type": "postgres",
-        "uid": "POSTGRES1234567890"
-      },
-      "description": "Users who twits the most",
       "fieldConfig": {
         "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "axisSoftMin": 0,
-            "fillOpacity": 80,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineWidth": 1,
-            "scaleDistribution": {
-              "type": "linear"
-            }
-          },
           "mappings": [],
           "thresholds": {
-            "mode": "absolute",
+            "mode": "percentage",
             "steps": [
               {
                 "color": "green",
                 "value": null
               },
               {
+                "color": "dark-yellow",
+                "value": 50
+              },
+              {
+                "color": "orange",
+                "value": 70
+              },
+              {
                 "color": "red",
-                "value": 80
+                "value": 85
               }
             ]
           },
-          "unit": "short"
+          "unit": "percent"
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
-        "w": 12,
+        "h": 7,
+        "w": 6,
         "x": 0,
-        "y": 12
+        "y": 22
       },
-      "id": 12,
+      "id": 20,
       "options": {
-        "barRadius": 0,
-        "barWidth": 0.97,
-        "groupWidth": 0.7,
-        "legend": {
-          "calcs": [],
-          "displayMode": "hidden",
-          "placement": "right"
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
         },
-        "orientation": "horizontal",
-        "showValue": "never",
-        "stacking": "none",
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        },
-        "xTickLabelRotation": 0,
-        "xTickLabelSpacing": 0
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
       },
       "pluginVersion": "8.4.3",
       "targets": [
         {
           "datasource": {
-            "type": "postgres",
-            "uid": "POSTGRES1234567890"
+            "type": "prometheus",
+            "uid": "Prometheus12345678"
           },
-          "format": "table",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": true,
-          "rawSql": "select count(*), u.username\nfrom message m\n         join \"user\" u on u.user_id = m.author_id\ngroup by m.author_id, u.username\norder by count(*) desc\nlimit 10\n",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "timeColumn": "time",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            }
-          ]
+          "exemplar": true,
+          "expr": "(sum(minitwit_total_http{code!~\"2.*|3.*\"}) / 2)\n/\n(sum(minitwit_total_http / 2))",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
         }
       ],
-      "title": "Top 10 Twitters",
-      "type": "barchart"
+      "title": "Error Rate",
+      "type": "gauge"
     },
     {
-      "description": "Rate of how many times we use a \"dirty hack\"",
+      "description": "Entries in this panel have a status code that is not 2xx or 3xx.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 7,
+        "x": 6,
+        "y": 22
+      },
+      "id": 11,
+      "options": {
+        "displayMode": "basic",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": false,
+        "text": {
+          "titleSize": 18,
+          "valueSize": 16
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus12345678"
+          },
+          "exemplar": true,
+          "expr": "sum by (url, code) (minitwit_total_http{code!~\"2.*|3.*\"})",
+          "interval": "",
+          "legendFormat": "{{url}} {{code}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Endpoints with errors",
+      "type": "bargauge"
+    },
+    {
       "fieldConfig": {
         "defaults": {
           "color": {
             "mode": "palette-classic"
           },
           "custom": {
-            "axisLabel": "",
+            "axisLabel": "%",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 11,
+        "x": 13,
+        "y": 22
+      },
+      "id": 22,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "hidden",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus12345678"
+          },
+          "exemplar": true,
+          "expr": "(sum(minitwit_total_http{code!~\"2.*|3.*\"}) / 2)\n/\n(sum(minitwit_total_http / 2))",
+          "interval": "",
+          "legendFormat": "Error Rate",
+          "refId": "A"
+        }
+      ],
+      "title": "Error Rate",
+      "type": "timeseries"
+    },
+    {
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 0,
+        "y": 29
+      },
+      "id": 5,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus12345678"
+          },
+          "exemplar": true,
+          "expr": "avg(minitwit_latest_time)/10^6",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Average Response time",
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "milliseconds",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -709,16 +932,16 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 12,
-        "y": 12
+        "h": 7,
+        "w": 11,
+        "x": 13,
+        "y": 29
       },
-      "id": 14,
+      "id": 24,
       "options": {
         "legend": {
           "calcs": [],
-          "displayMode": "list",
+          "displayMode": "hidden",
           "placement": "bottom"
         },
         "tooltip": {
@@ -733,17 +956,30 @@
             "uid": "Prometheus12345678"
           },
           "exemplar": true,
-          "expr": "rate(minitwit_total_hack_create_user_on_follow[5m])",
+          "expr": "avg(minitwit_latest_time)/10^6",
           "interval": "",
-          "legendFormat": "Create user on follow",
+          "legendFormat": "",
           "refId": "A"
         }
       ],
-      "title": "Hack Usage",
+      "title": "Average response time",
       "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 36
+      },
+      "id": 9,
+      "panels": [],
+      "title": "Row title",
+      "type": "row"
     }
   ],
-  "refresh": "30s",
+  "refresh": "5s",
   "schemaVersion": 35,
   "style": "dark",
   "tags": [],
@@ -751,13 +987,13 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {},
-  "timezone": "browser",
-  "title": "Minitwit - Business Intelligence",
-  "uid": "nwWEUkP7k",
-  "version": 4,
+  "timezone": "",
+  "title": "Endpoint",
+  "uid": "P9sNjkEnk",
+  "version": 2,
   "weekStart": ""
 }
