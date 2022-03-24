@@ -26,8 +26,6 @@ services:
       - SERVER_HOST=thomsen-it.dk
       - DB_TYPE=Postgres
       - DB_CONNECTION_STRING=${CONNECTION_STRING}
-#    volumes:
-#      - ./data/minitwit/:/tmp/
     networks:
       - app-network
 
