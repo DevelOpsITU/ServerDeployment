@@ -31,7 +31,7 @@ services:
       - DATABASE_HOSTNAME=$DATABASE_HOSTNAME
       - DATABASE_PASSWORD=$DATABASE_PASSWORD
       - DISCORD_WEBHOOK_URL=$DISCORD_WEBHOOK_URL
-      - GF_INSTALL_PLUGINS=marcusolsson-hourly-heatmap-panel,grafana-image-renderer
+      - GF_INSTALL_PLUGINS=marcusolsson-hourly-heatmap-panel
     ports:
      - 3000:3000
     volumes:
