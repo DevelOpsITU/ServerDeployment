@@ -8,9 +8,9 @@ notifiers:
     frequency: 1h
     settings:
       use_discord_username: true
-      url: $DISCORD_URL
+      url: $DISCORD_WEBHOOK_URL
     secure_settings:
-      url: $DISCORD_URL
+      url: $DISCORD_WEBHOOK_URL
 
 delete_notifiers:
   - name: discord-channel
