@@ -3,7 +3,7 @@ actor alice as a
 frame "Database server" {
 
   node  Docker #aliceblue;line:blue;line.dotted;text:blue
-
+  node node_exporter
       database ./data/postgres/data as db {
       storage MiniTwit
     }
@@ -11,13 +11,14 @@ frame "Database server" {
   frame "Docker db-network" as dockernet  {
     node Nginx
     node Postgres
-
-}
+  }
 
 
 
 a -> Docker : ":5432"
+a -> Docker : ":9100"
 Docker-> Nginx : ":5432"
+Docker-> node_exporter : ":9100"
 Nginx -> Postgres : ":5432"
 Postgres -- db
 

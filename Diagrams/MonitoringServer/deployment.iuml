@@ -1,0 +1,89 @@
+@startuml deployment
+actor alice as a
+frame "Monitoring server" {
+
+  node  Docker #aliceblue;line:blue;line.dotted;text:blue
+  frame "Docker monitoring-network" {
+    node Nginx
+    node node_exporter
+    node prometheus
+    node grafana
+    node loki
+    node data_scraper
+  }
+
+  /'
+  folder "/etc/letsencrypt/live/thomsen-it.dk" as certs {
+    file "cert.pem"
+    file "chain.pem"
+    file "fullchain.pem"
+    file "privkey.pem"
+  }
+
+  folder "/var/logs/" as logs {
+    folder "Nginx" as NginxLog {
+      file "access.log"
+      file "thomsen-it.access.log"
+    }
+  }
+
+  folder "/etc/loki/config" as lokifolder {
+    file "loki.yaml"
+  }
+
+  folder "/etc/prometheus/config" as prometheusfolder {
+    file "prometheus.yaml"
+  }
+
+  folder "/etc/grafana/" as grafanafolder {
+    folder "provisioning" as grafanaprovisioning {
+      folder "dashboards"
+      folder "datasources"
+      folder "notifiers"
+    }
+    folder "dashboards" as grafanadashboards {
+      file "NodeExporter.json"
+      folder "Minitwit" as grafanadashboardsminitwit {
+      file "Alerts.json"
+      file "Endpoint.json"
+      file "Heatmaps.json"
+      file "Minitwit.json"
+      file "Simulator.json"
+    }
+    }
+  } '/
+
+a -> Docker : ":80"
+a -> Docker : ":443"
+a -> Docker : ":3100"
+a -> Docker : ":9090" 
+a -> Docker : ":9100"
+
+Docker -> Nginx : ":80, :443, :3100 and :9090"
+
+
+
+/' Docker -> node_exporter : ":9100" '/
+
+prometheus -> node_exporter #line:red;text:red : ":9100"
+prometheus -> data_scraper : ":8080"
+prometheus -> prometheus : ":9090" /' Maybe not important? '/
+/' prometheus -> node_exporter (the other 2 servers) : ":9100" '/
+/' prometheus -> minitwit (thomsen-it.dk) : ":9100" '/
+
+
+Nginx -> grafana #line:green;text:green : ":3000"
+Nginx -> loki #line:blue;text:blue :":3100"
+Nginx -> prometheus : ":9090"
+
+
+
+/'
+Nginx -- certs
+Nginx -- NginxLog
+grafana -- grafanafolder
+prometheus -- prometheusfolder
+loki -- lokifolder'/
+
+}
+@enduml

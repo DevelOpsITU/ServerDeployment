@@ -150,6 +150,29 @@ To update the configurations of the server use
 
 - `./DatabaseServerUpdate.sh`
 
+
+
+
+## Monitoring server
+
+The Monitoring server should host the logging and monitoring that we are gathering from the Application and Database Server.
+
+Below is a deployment diagrams of what containers lives on the server
+
+![Deployment diagram](./Diagrams/MonitoringServer/deployment.svg)
+
+The Monitoring server also takes much inspiration from the Application server section.
+
+To start the server:
+
+- `vagrant up MonitoringServer`
+- Assign the ip to the new droplet
+- `./MonitorServerInit.sh`
+
+To update the configurations of the server use
+
+- `./MonitorServerUpdate.sh`
+
 ## Security considerations
 
 - We need to make sure that the firewall is configured correctly. i.e. allow only access to ports 22, 80, 443.
