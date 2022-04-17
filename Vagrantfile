@@ -21,6 +21,7 @@ Vagrant.configure("2") do |config|
       provider.private_networking = true
       provider.ipv6 = false
       provider.monitoring = false
+      provider.tags = ['application']
 
     end
   end
@@ -43,6 +44,7 @@ Vagrant.configure("2") do |config|
         provider.private_networking = true
         provider.ipv6 = false
         provider.monitoring = false
+        provider.tags = ['application']
 
       end
     end
