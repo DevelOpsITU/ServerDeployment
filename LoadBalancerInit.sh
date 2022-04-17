@@ -10,11 +10,11 @@
 #echo $APPLICATIONDROPLETS | jq '.droplets | .[] | .id'
 
 
-#### add the load balancer with ids of droplets
-LOADBALANCER=(curl --location --request POST 'https://api.digitalocean.com/v2/load_balancers' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer dop_v1_97bee0ef8458c86b9e70477371fd114d00d957eb25bb274b9c2b24bbd652d444' \
---data-raw '{
+#### add the load balancer with tag of droplets = "application"
+LOADBALANCER=$(curl -X POST \
+-H "Content-Type: application/json"  \
+-H "Authorization: Bearer $DIGITALOCEAN_TOKEN" \
+-d '{
   "name": "application-lb",
   "region": "fra1",
   "forwarding_rules":
@@ -32,7 +32,10 @@ LOADBALANCER=(curl --location --request POST 'https://api.digitalocean.com/v2/lo
        "tls_passthrough": true
        } ],
   "tag": "application"
-}')
+}' \
+"https://api.digitalocean.com/v2/load_balancers")
+
+echo $LOADBALANCER
 
 
 

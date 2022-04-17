@@ -47,7 +47,7 @@ Vagrant.configure("2") do |config|
         provider.tags = ['application']
 
       end
-    end
+   end
 
   config.vm.define "DatabaseServer" do |config|
     
