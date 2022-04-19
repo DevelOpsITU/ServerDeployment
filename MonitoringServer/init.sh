@@ -19,6 +19,7 @@ sudo certbot --nginx --non-interactive --agree-tos -d $server_name -d www.$serve
 
 sudo systemctl status nginx
 sudo service nginx stop
+sudo systemctl disable nginx
 nginx -s stop
 sudo systemctl status nginx
 
