@@ -3,7 +3,7 @@
 # This can be usd to get all ids of droplets with tag "application" - (It is not needed if creating loadbalancer with "tag")
 #APPLICATIONDROPLETS=$(curl -s GET \
 #  -H "Content-Type: application/json" \
-#  -H "Authorization: Bearer $DIGITALOCEAN_TOKEN" \
+#  -H "Authorization: Bearer $DIGITAL_OCEAN_TOKEN" \
 #  "https://api.digitalocean.com/v2/droplets?tag_name=application")
 
 
@@ -13,7 +13,7 @@
 #### add the load balancer with tag of droplets = "application"
 LOADBALANCER=$(curl -X POST \
 -H "Content-Type: application/json"  \
--H "Authorization: Bearer $DIGITALOCEAN_TOKEN" \
+-H "Authorization: Bearer $DIGITAL_OCEAN_TOKEN" \
 -d '{
   "name": "application-lb",
   "region": "fra1",
