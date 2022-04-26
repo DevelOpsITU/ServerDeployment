@@ -7,17 +7,18 @@ sudo apt upgrade -y
 # https://eff-certbot.readthedocs.io/en/stable/
 # https://stackoverflow.com/questions/49172841/how-to-install-certbot-lets-encrypt-without-interaction
 
-server_name=thomsen-it.dk
-sudo apt install nginx -y
-sudo snap install core; sudo snap refresh core
-sudo snap install --classic certbot
-sudo ln -s /snap/bin/certbot /usr/bin/certbot
-sudo certbot --nginx --non-interactive --agree-tos -d $server_name -d www.$server_name --email webmaster@$server_name
-
-sudo systemctl status nginx
-sudo service nginx stop
-nginx -s stop
-sudo systemctl status nginx
+# server_name=thomsen-it.dk
+# sudo apt install nginx -y
+# sudo snap install core; sudo snap refresh core
+# sudo snap install --classic certbot
+# sudo ln -s /snap/bin/certbot /usr/bin/certbot
+# sudo certbot --nginx --non-interactive --agree-tos -d $server_name -d www.$server_name --email webmaster@$server_name
+# 
+# sudo systemctl status nginx
+# sudo service nginx stop
+# sudo systemctl disable nginx
+# nginx -s stop
+# sudo systemctl status nginx
 
 #cp -r /etc/letsencrypt/live/thomsen-it.dk ./data/certs/
 

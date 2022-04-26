@@ -1,10 +1,15 @@
 @startuml deployment
 actor alice as a
+/'cloud MonitorServer as MS '/
 frame "Application server" {
 
-  node  Docker #aliceblue;line:blue;line.dotted;text:blue
+  node node_exporter
+
+  node Docker #aliceblue;line:blue;line.dotted;text:blue
+
   frame "Docker app-network" {
     node Nginx
+    node fluentd /' Not really in the network, but makes the drawing nicer '/
     node MiniTwit
   }
 
@@ -25,9 +30,18 @@ frame "Application server" {
     }
   }
 
-a -> Docker : ":443"
+a -> Docker : ":443 and :9100"
+
 Docker-> Nginx : ":443"
+Docker-> node_exporter : ":9100"
 Nginx -> MiniTwit: ":80"
+
+MiniTwit -> fluentd: ":24224"
+Nginx -> fluentd: ":24224"
+
+/'MS -> Docker : ":9100" 
+fluentd -> MS'/
+
 Nginx -- certs
 Nginx -- NginxLog
 MiniTwit -- miniTwitLogs
